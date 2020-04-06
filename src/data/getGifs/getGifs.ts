@@ -1,15 +1,15 @@
-import { TrendingEndpointConfig, RandomEndpointConfig, Trending } from "../types";
+import { TrendingEndpointConfig, RandomEndpointConfig, TrendingResponse } from "../../types";
 
-export function getTrending(config: TrendingEndpointConfig): Promise<Trending | Error> {
+export function getTrending(config: TrendingEndpointConfig): Promise<TrendingResponse | Error> {
     const url = buildUrlTrendingEndpoint(config);
     return fetch(url)
         .then(res => res.json())
         .catch(err => { throw err });
 }
 
-export function getRandom(config: RandomEndpointConfig) {
+export function getRandom(config: RandomEndpointConfig): Promise<TrendingResponse | Error> {
     const url = buildUrlRandomEndpoint(config);
-    fetch(url)
+    return fetch(url)
         .then(res => res.json())
         .catch(err => { throw err });
 }
