@@ -1,12 +1,26 @@
 import React from 'react';
-import { GIFData } from '../../types';
+import { GIFProps } from '../../types';
+import "./gif.css";
 
-export function GIF(props: GIFData) {
+export function GIF(props: GIFProps) {
+
     return (
-        <div>
-            {props.id}
-            {props.title}
-            {props.url}
+        <div className="gif-container">
+
+            <div className="gif">
+
+                <img src={props.url} />
+
+                <div className="gif-title">
+                    {props.title}
+                </div>
+
+                <div className="gif-imported-date">
+                    {props.importedDaysAgo}
+                </div>
+
+            </div>
+
         </div>
     );
 }
