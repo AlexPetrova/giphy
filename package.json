@@ -43,5 +43,9 @@
     "@babel/preset-typescript": "^7.9.0",
     "@types/fetch-mock": "^7.3.2",
     "jest-fetch-mock": "^3.0.3"
+  },
+  "jest": {
+    "testEnvironment": "node",
+    "verbose": true
   }
 }
