@@ -1,9 +1,3 @@
-#gif-items {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-}
-
 .gif-container {
     border: 3px solid gray;
     padding: 8px;
