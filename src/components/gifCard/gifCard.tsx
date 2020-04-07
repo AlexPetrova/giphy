@@ -1,5 +1,5 @@
 import React from 'react';
-import "./gif.css";
+import "./gifCard.css";
 import { GIFCard as GIFCardProps } from '../../types';
 
 export function GIFCard(props: GIFCardProps) {
