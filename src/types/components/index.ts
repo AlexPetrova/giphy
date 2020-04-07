@@ -1,1 +1,2 @@
-export * from "./gif";
+export * from "./gifCard";
+export * from "./gifList";

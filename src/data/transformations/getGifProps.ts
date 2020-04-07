@@ -1,6 +1,6 @@
-import { GIFProps, GIFData } from "../../types";
+import { GIFData, GIFCard } from "../../types";
 
-export function getGifProps(gifData: GIFData): GIFProps {
+export function getGifProps(gifData: GIFData): GIFCard {
     return {
         id: gifData.id,
         title: gifData.title,
