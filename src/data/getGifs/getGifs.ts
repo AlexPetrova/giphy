@@ -10,7 +10,7 @@ export function getTrending(config: TrendingEndpointConfig): Promise<TrendingRes
         .catch(err => { throw err });
 }
 
-export function getRandom(config: RandomEndpointConfig): Promise<TrendingResponse | Error> {
+export function getRandom(config: RandomEndpointConfig): Promise<RandomResponse | Error> {
     const url = buildUrlRandomEndpoint(config);
     return fetch(url)
         .then(res => res.json())
