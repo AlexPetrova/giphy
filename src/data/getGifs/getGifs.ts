@@ -1,4 +1,7 @@
-import { TrendingEndpointConfig, RandomEndpointConfig, TrendingResponse } from "../../types";
+import {
+    TrendingEndpointConfig, RandomEndpointConfig,
+    TrendingResponse, RandomResponse
+} from "../../types";
 
 export function getTrending(config: TrendingEndpointConfig): Promise<TrendingResponse | Error> {
     const url = buildUrlTrendingEndpoint(config);
