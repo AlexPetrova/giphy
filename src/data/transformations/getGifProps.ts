@@ -6,6 +6,7 @@ export function getGifProps(gifData: GIFData, isLiked: boolean): GIFCard {
         title: gifData.title,
         importedDaysAgo: getImportedAgoText(gifData.import_datetime),
         url: gifData.images.fixed_height.url,
+        width: gifData.images.fixed_height.width,
         isLiked: false
     }
 }
