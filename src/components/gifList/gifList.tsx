@@ -12,6 +12,7 @@ export function GIFList(props: GifListProps) {
                     id={card.id}
                     title={card.title}
                     importedDaysAgo={card.importedDaysAgo}
+                    width={card.width}
                     url={card.url}
                     isLiked={false}
                 />
