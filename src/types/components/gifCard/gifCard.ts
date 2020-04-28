@@ -3,4 +3,5 @@ export type GIFCard = {
     title: string;
     url: string;
     importedDaysAgo: string;
+    isLiked: boolean;
 }
