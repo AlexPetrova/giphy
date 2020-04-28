@@ -1,6 +1,7 @@
 import React from 'react';
 import "./gifCard.css";
 import { GIFCard as GIFCardProps } from '../../types';
+import { Like } from '../like';
 
 export function GIFCard(props: GIFCardProps) {
 
@@ -15,6 +16,7 @@ export function GIFCard(props: GIFCardProps) {
                     {props.importedDaysAgo}
                 </div>
             </div>
+            <Like />
         </div>
     );
 }
