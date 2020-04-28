@@ -1,11 +1,12 @@
 import { GIFData, GIFCard } from "../../types";
 
-export function getGifProps(gifData: GIFData): GIFCard {
+export function getGifProps(gifData: GIFData, isLiked: boolean): GIFCard {
     return {
         id: gifData.id,
         title: gifData.title,
         importedDaysAgo: getImportedAgoText(gifData.import_datetime),
-        url: gifData.images.fixed_height.url
+        url: gifData.images.fixed_height.url,
+        isLiked: false
     }
 }
 
