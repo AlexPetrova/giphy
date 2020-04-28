@@ -1,1 +1,1 @@
-export * from "./getGifs";
+export * from "./buildGiphyEndpointConfigs";
