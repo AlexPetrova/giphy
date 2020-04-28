@@ -3,9 +3,10 @@ import "./like.css";
 
 export function Like() {
     const [isLiked, setLiked] = useState(false);
+    const classNames = `${isLiked ? "liked-text fade-in" : "like-text"}`;
 
     return (
-        <div>
+        <div className="like-container">
             <img
                 src={isLiked
                     ? "/heart-filled.svg"
@@ -14,6 +15,9 @@ export function Like() {
                 className="like-heart"
                 onClick={() => setLiked(!isLiked)}
             />
+            <span className={classNames}>
+                {isLiked ? "Liked!" : "Like"}
+            </span>
         </div>
     )
 }

@@ -1,4 +1,27 @@
+.like-container {
+    position: relative;
+}
+
 .like-heart {
     cursor: pointer;
     height: 50px;
+}
+
+.like-text, .liked-text {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.fade-in {
+    animation: fadein 4s;
+}
+
+@keyframes fadein {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }
