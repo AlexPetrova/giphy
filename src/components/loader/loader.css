@@ -1,0 +1,11 @@
+.loader-container {
+    width: 100%;
+    height: 100%;
+}
+
+.loader-image {
+    width: 180px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
