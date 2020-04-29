@@ -2,7 +2,7 @@ import React from "react";
 import { useFetch } from "../../hooks";
 import { buildUrlTrendingEndpoint, getGifProps } from "../../data";
 import { TrendingResponse } from "../../types";
-import { GIFList } from "..";
+import { GIFList, Loader } from "../../components";
 
 export function Section(props: { title: string }) {
 
@@ -19,13 +19,13 @@ export function Section(props: { title: string }) {
     return (
         <>
             <div>{props.title}</div>
-            {trendingGifs !== undefined
-                ? <GIFList gifCards={trendingGifs.data
+            {trendingGifs === undefined
+                ? <Loader />
+                : <GIFList gifCards={trendingGifs.data
                     .map(gifData =>
                         getGifProps(gifData, false)
-                    )}
-                />
-                : <div>Loading...</div>}
+                    )} />
+            }
         </>
     )
 }
