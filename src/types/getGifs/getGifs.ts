@@ -3,6 +3,8 @@ export type TrendingEndpointConfig = (MainConfig & TrendingConfig);
 
 export type RandomEndpointConfig = (MainConfig & RandomConfig);
 
+export type GetGifsByIdsEndpointConfig = (MainConfig & GifsByIdsConfig);
+
 export type TrendingResponse = {
     data: GIFData[];
     pagination: Pagination;
@@ -12,6 +14,12 @@ export type TrendingResponse = {
 export type RandomResponse = {
     data: GIFData;
     meta: Metadata;
+}
+
+export type GifsByIdsResponse = {
+    data: GIFData[];
+    pagination: Pagination;
+    meta: Metadata
 }
 
 export type GIFData = {
@@ -157,7 +165,7 @@ export type AnalyticsInfo = {
 
 type MainConfig = {
     url: string;
-    endpoint: Endpoint;
+    endpoint: string;
     key: string
 }
 
@@ -171,6 +179,9 @@ type RandomConfig = {
     rating: string;
 }
 
+type GifsByIdsConfig = {
+    ids: string;
+}
+
 type Rating = "G" | "PG" | "PG-13" | "R";
 
-type Endpoint = "trending" | "random";
