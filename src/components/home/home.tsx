@@ -14,7 +14,7 @@ export function Home() {
         buildUrlTrendingEndpoint({
             url: "https://api.giphy.com/v1/gifs",
             endpoint: "trending",
-            key: "zSUuaZIIjGh1Dx3I2Vwih6QzQM7klhul",
+            key: "",
             limit: 20,
             rating: "G"
         })
@@ -24,7 +24,7 @@ export function Home() {
         buildUrlGetGifsByIds({
             url: "https://api.giphy.com/v1",
             endpoint: "gifs",
-            key: "zSUuaZIIjGh1Dx3I2Vwih6QzQM7klhul",
+            key: "",
             ids: liked.join(",")
         })
     );

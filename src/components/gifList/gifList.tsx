@@ -9,12 +9,7 @@ export function GIFList(props: GifListProps) {
             {props.gifCards.map(card => {
                 return <GIFCard
                     key={card.id}
-                    id={card.id}
-                    title={card.title}
-                    importedDaysAgo={card.importedDaysAgo}
-                    width={card.width}
-                    url={card.url}
-                    isLiked={false}
+                    {...card}
                 />
             })}
         </div>
