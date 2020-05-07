@@ -4,7 +4,7 @@ import "./like.css";
 
 export function Like(props: LikeProps) {
 
-    const [isLiked, setLiked] = useState(false);
+    const [isLiked, setLiked] = useState(props.isLiked);
     const classNames = `${isLiked ? "liked-text fade-in" : "like-text"}`;
 
     return (
@@ -17,7 +17,11 @@ export function Like(props: LikeProps) {
                 className="like-heart"
                 onClick={() => {
                     setLiked(!isLiked);
-                    props.onLikeClick(props.id);
+                    props.onLikeClick(prevState => {
+                        return isLiked
+                            ? prevState.filter(value => value !== props.id)
+                            : [...prevState, props.id]
+                    });
                 }}
             />
             <span className={classNames}>

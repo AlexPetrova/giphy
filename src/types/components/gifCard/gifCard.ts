@@ -5,4 +5,5 @@ export type GIFCard = {
     width: string;
     importedDaysAgo: string;
     isLiked: boolean;
+    saveLike: React.Dispatch<React.SetStateAction<string[]>>
 }

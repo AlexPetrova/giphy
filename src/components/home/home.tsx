@@ -1,16 +1,20 @@
-import React from "react";
+import React, { useState } from "react";
 import { useFetch } from "../../hooks";
-import { buildUrlTrendingEndpoint, getGifProps, buildUrlGetGifsByIds } from "../../data";
+import {
+    buildUrlTrendingEndpoint, getGifProps,
+    buildUrlGetGifsByIds
+} from "../../data";
 import { TrendingResponse, GifsByIdsResponse } from "../../types";
 import { Loader, GIFList, SectionTitle } from "../../components";
 
 export function Home() {
+    const [liked, saveLike] = useState<string[]>([]);
 
     const trendingGifs = useFetch<TrendingResponse>(
         buildUrlTrendingEndpoint({
             url: "https://api.giphy.com/v1/gifs",
             endpoint: "trending",
-            key: "",
+            key: "zSUuaZIIjGh1Dx3I2Vwih6QzQM7klhul",
             limit: 20,
             rating: "G"
         })
@@ -20,8 +24,8 @@ export function Home() {
         buildUrlGetGifsByIds({
             url: "https://api.giphy.com/v1",
             endpoint: "gifs",
-            key: "",
-            ids: "xT4uQulxzV39haRFjG,3og0IPxMM0erATueVW"
+            key: "zSUuaZIIjGh1Dx3I2Vwih6QzQM7klhul",
+            ids: liked.join(",")
         })
     );
 
@@ -30,19 +34,20 @@ export function Home() {
             <SectionTitle title={"Trending"} />
             {trendingGifs === undefined
                 ? <Loader />
-                : <GIFList gifCards={trendingGifs.data
-                    .map(rawGif =>
-                        getGifProps(rawGif, false)
-                    )} />
+                : <GIFList
+                    gifCards={trendingGifs.data
+                        .map(rawGif =>
+                            getGifProps(rawGif, saveLike, liked.includes(rawGif.id))
+                        )}
+                />
             }
 
             <SectionTitle title={"Liked GIFs"} />
             {likedGifs === undefined
                 ? <Loader />
                 : <GIFList gifCards={likedGifs.data
-                    .map(rawGif =>
-                        getGifProps(rawGif, false)
-                    )} />
+                    .map(rawGif => getGifProps(rawGif, saveLike, liked.includes(rawGif.id)))}
+                />
             }
         </>
     )

@@ -1,13 +1,17 @@
 import { GIFData, GIFCard } from "../../types";
 
-export function getGifProps(gifData: GIFData, isLiked: boolean): GIFCard {
+export function getGifProps(gifData: GIFData,
+    saveLike: React.Dispatch<React.SetStateAction<string[]>>,
+    isLiked: boolean
+): GIFCard {
     return {
         id: gifData.id,
         title: gifData.title,
         importedDaysAgo: getImportedAgoText(gifData.import_datetime),
         url: gifData.images.fixed_height.url,
         width: gifData.images.fixed_height.width,
-        isLiked: false
+        isLiked: isLiked,
+        saveLike: saveLike
     }
 }
 

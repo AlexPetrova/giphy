@@ -1,7 +1,6 @@
 import React from 'react';
 import "./gifCard.css";
 import { GIFCard as GIFCardProps } from '../../types';
-import { saveLike } from '../../data';
 import { GifPreview, Like } from '../../components';
 
 export function GIFCard(props: GIFCardProps) {
@@ -13,7 +12,7 @@ export function GIFCard(props: GIFCardProps) {
                 <div className="gif-title"> {props.title} </div>
                 <div className="gif-imported-date"> {props.importedDaysAgo} </div>
             </div>
-            <Like id={props.id} isLiked={props.isLiked} onLikeClick={saveLike} />
+            <Like id={props.id} isLiked={props.isLiked} onLikeClick={props.saveLike} />
         </div>
     );
 }
