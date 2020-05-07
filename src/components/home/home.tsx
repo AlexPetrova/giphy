@@ -6,6 +6,7 @@ import {
 } from "../../data";
 import { TrendingResponse, GifsByIdsResponse } from "../../types";
 import { Loader, GIFList, SectionTitle } from "../../components";
+import * as config from "../../config.json"
 
 export function Home() {
     const [liked, saveLike] = useState<string[]>([]);
@@ -14,7 +15,7 @@ export function Home() {
         buildUrlTrendingEndpoint({
             url: "https://api.giphy.com/v1/gifs",
             endpoint: "trending",
-            key: "",
+            key: config.giphyAppKey,
             limit: 20,
             rating: "G"
         })
@@ -24,7 +25,7 @@ export function Home() {
         buildUrlGetGifsByIds({
             url: "https://api.giphy.com/v1",
             endpoint: "gifs",
-            key: "",
+            key: config.giphyAppKey,
             ids: liked.join(",")
         })
     );
