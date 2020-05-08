@@ -10,8 +10,8 @@ export function getGifProps(gifData: GIFData,
         importedDaysAgo: getImportedAgoText(gifData.import_datetime),
         url: gifData.images.fixed_height.url,
         width: gifData.images.fixed_height.width,
-        isLiked: isLiked,
-        saveLike: saveLike
+        saveLike: saveLike,
+        isLiked: isLiked
     }
 }
 
